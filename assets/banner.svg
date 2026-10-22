@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#bae6fd" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="pdfIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1deg); }
+      }
+      @keyframes floatReverse {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(14px) rotate(-1.5deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.08); }
+      }
+      @keyframes shimmerFlow {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .floating-pill-1 { animation: floatSlow 6s ease-in-out infinite; }
+      .floating-pill-2 { animation: floatReverse 7s ease-in-out infinite; }
+      .floating-pill-3 { animation: floatSlow 8s ease-in-out infinite; }
+      .floating-pill-4 { animation: floatReverse 9s ease-in-out infinite; }
+      .pulsing-orb { animation: pulseGlow 5s ease-in-out infinite; transform-origin: center; }
+      .circuit-line {
+        stroke-dasharray: 20 15;
+        animation: shimmerFlow 20s linear infinite;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 500;
+      }
+      .badge-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" stroke="#1f2937" stroke-width="1.5" />
+
+  <!-- Animated Glowing Atmosphere in Background -->
+  <g class="pulsing-orb">
+    <circle cx="240" cy="140" r="160" fill="url(#glowGrad1)" filter="url(#blurFilter)" />
+    <circle cx="980" cy="240" r="180" fill="url(#glowGrad2)" filter="url(#blurFilter)" />
+  </g>
+
+  <!-- Ambient Circuit / Flow Lines (Background Layer) -->
+  <g opacity="0.18">
+    <path class="circuit-line" d="M -50 120 C 300 80, 500 240, 850 160 C 1050 110, 1150 180, 1250 140" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="circuit-line" d="M -50 310 C 250 340, 550 200, 850 300 C 1050 360, 1180 260, 1250 280" fill="none" stroke="#c084fc" stroke-width="1.5" />
+    <circle cx="280" cy="98" r="4" fill="#38bdf8" />
+    <circle cx="620" cy="215" r="4" fill="#818cf8" />
+    <circle cx="920" cy="295" r="4" fill="#c084fc" />
+  </g>
+
+  <!-- Ambient Floating Feature Pills (Soft Background/Midground Accent, Non-Obscuring) -->
+  <g opacity="0.45">
+    <!-- Top-Right Floating Pill -->
+    <g class="floating-pill-1" transform="translate(860, 48)">
+      <rect width="165" height="34" rx="17" fill="#1e293b" stroke="#38bdf8" stroke-width="1" opacity="0.8" />
+      <text x="82" y="22" fill="#7dd3fc" text-anchor="middle" class="badge-text">⚡ HTML ➔ PDF Engine</text>
+    </g>
+
+    <!-- Mid-Right Floating Pill -->
+    <g class="floating-pill-2" transform="translate(970, 125)">
+      <rect width="170" height="34" rx="17" fill="#1e293b" stroke="#818cf8" stroke-width="1" opacity="0.8" />
+      <text x="85" y="22" fill="#a5b4fc" text-anchor="middle" class="badge-text">📑 CSS Paged Media</text>
+    </g>
+
+    <!-- Bottom-Right Floating Pill -->
+    <g class="floating-pill-3" transform="translate(890, 335)">
+      <rect width="180" height="34" rx="17" fill="#1e293b" stroke="#c084fc" stroke-width="1" opacity="0.8" />
+      <text x="90" y="22" fill="#e9d5ff" text-anchor="middle" class="badge-text">✂️ Split, Merge &amp; Transform</text>
+    </g>
+
+    <!-- Top-Left Floating Pill -->
+    <g class="floating-pill-4" transform="translate(60, 48)">
+      <rect width="160" height="34" rx="17" fill="#1e293b" stroke="#34d399" stroke-width="1" opacity="0.8" />
+      <text x="80" y="22" fill="#6ee7b7" text-anchor="middle" class="badge-text">🚀 Headless Chromium</text>
+    </g>
+
+    <!-- Bottom-Left Floating Pill -->
+    <g class="floating-pill-1" transform="translate(70, 335)">
+      <rect width="165" height="34" rx="17" fill="#1e293b" stroke="#f43f5e" stroke-width="1" opacity="0.8" />
+      <text x="82" y="22" fill="#fda4af" text-anchor="middle" class="badge-text">🎨 Coordinate Drawing</text>
+    </g>
+  </g>
+
+  <!-- FOREGROUND CONTENT LAYER (Sharp, Prominent, High Contrast) -->
+  <g transform="translate(600, 195)" text-anchor="middle" filter="url(#softShadow)">
+    
+    <!-- PDF Document Emblem / Badge -->
+    <g transform="translate(-48, -135)">
+      <!-- Document Base -->
+      <rect x="0" y="0" width="70" height="88" rx="8" fill="#1f2937" stroke="#374151" stroke-width="1.5" />
+      <!-- Top Fold Corner -->
+      <path d="M 46 0 L 70 24 L 46 24 Z" fill="#374151" />
+      <!-- Red PDF Tag -->
+      <rect x="10" y="44" width="76" height="26" rx="5" fill="url(#pdfIconGrad)" />
+      <text x="48" y="62" fill="#ffffff" font-family="-apple-system, sans-serif" font-weight="900" font-size="14" letter-spacing="1" text-anchor="middle">PDF</text>
+      <!-- Sheet Decorative Lines -->
+      <line x1="12" y1="18" x2="38" y2="18" stroke="#6b7280" stroke-width="2" stroke-linecap="round" />
+      <line x1="12" y1="28" x2="32" y2="28" stroke="#6b7280" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    <!-- Category Pill Tag -->
+    <g transform="translate(0, -32)">
+      <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+      <text x="0" y="4" fill="#a5b4fc" class="badge-text" letter-spacing="0.5">CURATED AWESOME ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title -->
+    <text y="24" fill="url(#titleGrad)" font-size="44" class="title-text">
+      Awesome PDF Generation &amp; Manipulation
+    </text>
+
+    <!-- Accent Gradient Rule -->
+    <rect x="-160" y="44" width="320" height="3" rx="1.5" fill="url(#accentGrad)" />
+
+    <!-- Subtitle -->
+    <text y="78" fill="#94a3b8" font-size="19" class="subtitle-text">
+      The definitive index of SaaS APIs, client &amp; server rendering engines, and open-source tools
+    </text>
+
+    <!-- Capability Highlights in Foreground Footer -->
+    <g transform="translate(0, 118)">
+      <text x="-310" y="0" fill="#64748b" class="badge-text">⚡ High-Volume Invoices</text>
+      <circle cx="-215" cy="-4" r="2.5" fill="#475569" />
+      <text x="-120" y="0" fill="#64748b" class="badge-text">🌐 Client &amp; Server Side</text>
+      <circle cx="-25" cy="-4" r="2.5" fill="#475569" />
+      <text x="75" y="0" fill="#64748b" class="badge-text">🖨️ Pixel-Perfect Print CSS</text>
+      <circle cx="185" cy="-4" r="2.5" fill="#475569" />
+      <text x="280" y="0" fill="#64748b" class="badge-text">🛠️ Zero-Dependency Native</text>
+    </g>
+
+  </g>
+</svg>

@@ -1,96 +1,279 @@
-# Awesome-PDF-Generation-Manipulation
+# 📄 Awesome PDF Generation &amp; Manipulation
 
-## Top PDF Generation & Manipulation Tools Ecosystem
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome PDF Generation &amp; Manipulation Banner" width="100%" />
+</p>
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-*Focused on Programmatic Drawing, HTML-to-PDF Rendering & Server-Side Generation*  
-**Last updated: March 2026**
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **PDF Generation & Manipulation**. These tools create PDF documents from scratch — drawing text, shapes, and tables programmatically, or converting HTML/CSS into print-ready pages — and then manipulate them through merging, splitting, and page-level operations.
-
-**Examples** include PDFKit, jsPDF, pdfmake, Puppeteer, WeasyPrint, fpdf2, TCPDF, Aspose.PDF, IronPDF, and DocRaptor (the category leaders).
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, programmatic layout control, and transparent rendering engines — ideal for backend engineers generating invoices at scale, frontend developers producing client-side PDFs, and teams avoiding per-document commercial API costs.
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-- **[Aspose.PDF](https://products.aspose.com/pdf/)**  
-  **The most feature-complete commercial PDF API** for .NET, Java, Python, and other platforms. Native APIs for creating, editing, converting, and rendering PDFs with full fidelity. Supports form fields, digital signatures, PDF/A compliance, and OCR. **Family pack from $1,199**. **Best for enterprise applications** requiring maximum format compatibility and broad platform support.
-
-- **[IronPDF](https://ironsoftware.com/)**  
-  **.NET PDF library with HTML-to-PDF conversion**, editing, and form handling. Simple API for common operations. **Best for .NET developers** wanting straightforward PDF generation without complex setup.
-
-- **[DocRaptor](https://docraptor.com/)**  
-  **Hosted HTML-to-PDF API powered by Prince XML** — the highest-fidelity HTML-to-PDF engine available. **Best for teams needing pixel-perfect print CSS** without running Prince locally. Usage-based pricing per document.
-
-- **[Prince XML](https://www.princexml.com/)**  
-  **The reference HTML-to-PDF engine** with the best CSS Paged Media support. Commercial licensing; **server licenses start around $3,800** for a single CPU. **Best for publishing workflows** requiring advanced typography and print-specific CSS.
-
-## Open-Source GitHub Projects
-
-- **[PDFKit](https://github.com/foliojs/pdfkit)**  
-  **The high-performance server-side PDF generation library for Node.js** — MIT licensed . **Pure JavaScript with no Chromium dependency** — generates PDFs in **~8ms per document** for simple invoices, making it viable for high-volume generation without special infrastructure . **Stream-based API**: the `PDFDocument` object is a Node.js Readable stream, so pages can be piped to a write stream or HTTP response without holding the entire document in memory . **Programmatic drawing API** for text, paths, vector graphics, images, and tables. **Font handling**: loads TTF/OTF files directly and **subsets embedded fonts** — only glyphs actually used are included . **Trade-offs**: **no HTML/CSS rendering** — you draw everything with coordinates, which is prohibitively expensive if you need to replicate a web design . **Best for data-driven PDFs** (invoices, receipts, statements, certificates) where structure is defined by business logic rather than design iteration.
-
-- **[jsPDF](https://github.com/parallax/jsPDF)**  
-  **The most widely used client-side PDF library** — MIT licensed . **Generates PDFs entirely in the browser** without server involvement — ideal for "download receipt" buttons and client-side exports . **`html()` method** converts HTML content to PDF, though it depends on **html2canvas** and **dompurify** for rendering and sanitization . **UTF-8 support requires custom font embedding** — the 14 standard PDF fonts are ASCII-only, so non-Latin text requires converting TTF files via the fontconverter tool . **Two API modes**: "compat" mode matches the original MrRio version for plugin compatibility, while "advanced" mode (from the yWorks fork) enables patterns, FormObjects, and transformation matrices . **Security note**: jsPDF strongly advises sanitizing user input before passing it to the library . **Best for browser-side PDF generation** where you need simple documents without a server round-trip.
-
-- **[pdfmake](https://github.com/bpampuch/pdfmake)**  
-  **The declarative JSON-based PDF generator for client and server** — MIT licensed . **Define documents as JSON structures** rather than imperative drawing commands — excellent for standard business documents like invoices and reports where **layout consistency matters more than custom graphics** . **Built-in support for tables, columns, lists, images, and styling** with automatic page breaks. **Self-contained with VFS fonts** — font files embedded directly in the document definition . **Runs in both browser and Node.js** with the same document definition. **Trade-offs**: **less flexible for arbitrary graphics** than PDFKit's drawing API — the declarative model constrains what you can express . **Best for data-heavy reports** with dynamic tables and complex grids where consistency beats customization.
-
-- **[Puppeteer](https://github.com/puppeteer/puppeteer)**  
-  **The headless Chrome PDF renderer** — Apache 2.0 licensed . **`page.pdf()` renders any HTML/CSS to PDF** with modern CSS support (flexbox, grid, web fonts) via Chromium's print pipeline . **The correct tool when your PDF must faithfully render an existing web design** — dashboards, report pages, marketing material — where implementing the design twice (HTML/CSS plus a coordinate-based drawing API) is prohibitively expensive . **Trade-offs**: **browser startup costs ~800ms** — amortized with a persistent browser instance, per-page time drops to **~25ms** . **Chromium adds hundreds of MB install size and significant RAM per browser instance** . **Print pipeline edge cases can differ from on-screen CSS** . **Best for low-to-medium frequency generation** (a few hundred PDFs per day) where design fidelity matters more than raw throughput .
-
-- **[WeasyPrint](https://github.com/Kozea/WeasyPrint)**  
-  **The Python HTML/CSS-to-PDF rendering engine** — BSD licensed . **Turns simple HTML pages into statistical reports, invoices, and tickets** with a CSS layout engine written in Python, **designed for pagination** and meant to be easy to hack on . **Not based on a full rendering engine** like WebKit or Gecko — it's a dedicated print renderer . **Supports CSS Paged Media**, page breaks, running headers/footers, and complex layouts. **Python 3.9+**, tested on CPython and PyPy . **Trade-offs**: **not a pixel-perfect browser renderer** — complex CSS may render differently than Chrome . **Best for Python backends** generating styled reports from HTML templates without a browser dependency.
-
-- **[fpdf2](https://github.com/py-pdf/fpdf2)**  
-  **The simple and fast PDF generation library for Python** — LGPL-3.0 licensed . **Fork and successor of PyFPDF** with a user-friendly API and easy extensibility . **Unicode (UTF-8) TrueType font subset embedding** supporting almost any language including Chinese, Japanese, Korean, Hindi, and Arabic . **Features**: tables with automatic page breaks and text justification, images with transparency, barcodes and charts, internal/external links, document encryption and signing, annotations, table of contents, and basic Markdown-like styling . **Minimal dependencies**: Pillow, defusedxml, and fonttools . **Can embed Matplotlib, Pandas, and Plotly charts** as images . **Used by Harvard University in CS50** and in production projects like OpenDroneMap and Concordia . **Best for Python developers** wanting simple, dependency-light PDF generation with broad Unicode support.
-
-- **[TCPDF](https://github.com/tecnickcom/TCPDF)**  
-  **The long-standing PHP PDF generation library** — LGPL-3.0 licensed . **Single-class library with full Unicode support, font embedding and subsetting, barcodes (73 formats including QR and DataMatrix), and PDF/A parts 1-3 compliance** . **Supports bidirectional text (UAX #9)** and complex-script shaping for Arabic and Devanagari . **Deprecated in favor of tc-lib-pdf** — still maintained for legacy projects but not recommended for new development . **Best for existing PHP applications** already using TCPDF.
-
-- **[mPDF](https://github.com/mpdf/mPDF)**  
-  **The PHP HTML-to-PDF library with wide CSS support** — GPL-2.0 licensed . **FPDF-derived core** with HTML and CSS rendering, font embedding and subsetting, and Unicode support . **Wide subset of CSS3** including floats, positioning, and table layout . **Best for PHP applications** needing HTML-to-PDF conversion with more CSS support than FPDF's primitives offer.
-
-- **[Dompdf](https://github.com/dompdf/dompdf)**  
-  **The CSS 2.1 layout engine in PHP** — LGPL-2.1 licensed . **Renders HTML/CSS to PDF** with CSS 2.1 support and parts of CSS3 . **Font embedding and subsetting** (unreliable for OpenType CFF outlines) . **Best for PHP projects** needing straightforward HTML-to-PDF without mPDF's larger footprint.
-
-- **[FPDF](https://github.com/Setasign/FPDF)**  
-  **The minimal primitive drawing library for PHP** — permissive license with no attribution clause . **Basic text and primitive drawing** with core fonts and single-byte encodings . **Unicode only through the tFPDF fork** . **Best for legacy PHP projects** needing the simplest possible PDF generation.
-
-### Additional Strong Open-Source Options
-
-- **pdf-lib** — JavaScript library for creating and modifying PDFs in any environment. MIT licensed. Strong for PDF manipulation (merge, split, form filling) rather than generation from scratch .
-- **borb** — Python library for reading, creating, and manipulating PDFs with a focus on layout and typography.
-- **pypdf** — Pure Python PDF library for splitting, merging, cropping, and transforming pages.
-- **wkhtmltopdf** — Command-line HTML-to-PDF converter using WebKit. Historically popular but **limited by its Qt dependency** — the patched Qt build is needed for headers, footers, and outlines [citation:4][citation:10].
-
-**Frameworks for building custom systems**: Combine **PDFKit** for high-volume data-driven PDFs with minimal memory footprint, **pdfmake** for declarative JSON-defined reports with consistent layout, **jsPDF** for client-side generation without server round-trips, **Puppeteer** for design-faithful HTML-to-PDF when your PDF must match a web page, **WeasyPrint** or **fpdf2** for Python backends, and **TCPDF** or **mPDF** for PHP applications — to build a PDF generation stack tailored to your language ecosystem, throughput requirements, and design fidelity needs.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- PDF generation tools differ significantly in rendering approach, performance profile, and language ecosystem. **PDFKit generates at ~8ms per PDF** for simple invoices and streams pages without holding the document in memory — the right choice for high-volume data-driven generation . **Puppeteer's ~800ms browser startup** makes it unsuitable for per-request generation at scale, but amortized with a persistent browser it reaches ~25ms per page and is the correct tool when your PDF must faithfully render an existing web design . **jsPDF generates in the browser** but UTF-8 requires custom font embedding, and the `html()` method depends on html2canvas and dompurify . **pdfmake's declarative JSON model** is excellent for consistent report layouts but constrains arbitrary graphics . **TCPDF is deprecated** in favor of tc-lib-pdf — use for legacy projects only . **Aspose.PDF and IronPDF are commercial** with per-developer licensing costs.
-- Self-hosted open-source solutions require proper font subsetting for non-Latin scripts, memory management for Chromium-based pipelines, and awareness that print CSS may render differently from screen CSS.
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-PDF-Generation-Manipulation/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-PDF-Generation-Manipulation?style=flat-square&logo=github" alt="Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-PDF-Generation-Manipulation/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-PDF-Generation-Manipulation?style=flat-square&logo=github" alt="Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-PDF-Generation-Manipulation/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-PDF-Generation-Manipulation/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
-**Made for backend engineers, frontend developers, and teams generating PDFs programmatically or from HTML.**
-Let's make PDF generation and manipulation more open, performant, and language-appropriate.
+## 📌 Executive Summary &amp; Overview
+
+**Awesome PDF Generation &amp; Manipulation** is the definitive, search-optimized collection of software libraries, hosted developer APIs, and open-source engines dedicated to programmatic document construction, HTML-to-PDF rendering, and PDF file transformation.
+
+Whether you need to generate high-throughput invoices in Node.js (sub-10ms), render pixel-perfect CSS Paged Media reports in Python, export client-side dashboards in the browser, or automate complex server-side PDF splitting, merging, OCR, and digital signatures, this guide covers the entire programmatic PDF ecosystem.
+
+---
+
+## 📑 Table of Contents
+
+- [🌐 Sector Overview &amp; Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS &amp; Commercial Hosted Platforms](#-saas--commercial-hosted-platforms)
+- [🚀 Open-Source GitHub Projects](#-open-source-github-projects)
+  - [📊 Quick Comparison Matrix](#-quick-comparison-matrix)
+  - [🔍 Detailed Project Breakdowns (Ranked by Stars)](#-detailed-project-breakdowns-ranked-by-stars)
+- [🎯 Architectural Selection Guide](#-architectural-selection-guide)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [📈 Star History](#--star-history)
+- [💖 Support](#-support)
+- [⚖️ Disclaimer &amp; License](#️-disclaimer--license)
+
+---
+
+## 🌐 Sector Overview &amp; Market Dynamics
+
+The global document generation and automation software market is currently valued at approximately **$3.6B to $4.8B**, projected to surge past **$10B by 2032** at an estimated CAGR of 11.8% to 14.2%. Growth is propelled by accelerating enterprise digital transformation, automated e-invoicing mandates, dynamic contract assembly, and automated business reporting pipelines.
+
+The sector exhibits **moderate fragmentation**: while legacy desktop publishing and enterprise PDF standardization remain heavily concentrated under category pioneers like Adobe, the modern developer-centric API and programmatic PDF generation ecosystem is broadly fragmented. Developers choose between high-end commercial cloud APIs (Prince XML, DocRaptor, Apryse, Aspose), lightweight hosted SaaS endpoints (PDFShift, PDFMonkey), and a rich self-hosted open-source ecosystem spanning headless Chromium automation (Puppeteer, Gotenberg), declarative frameworks (Typst, React-PDF), and native zero-dependency drawing engines (PDFKit, pypdf, fpdf2).
+
+---
+
+## 🏢 SaaS &amp; Commercial Hosted Platforms
+
+The table below compiles leading commercial PDF platforms and hosted rendering APIs, **sorted descending by company scale (valuation / annual revenue)**.
+
+| 🏢 Product &amp; Vendor | 📊 Company Scale (Valuation / Revenue) | 💰 Starting Tier Price | 🎁 Free Tier / Trial Limits | 🎯 Core Strengths &amp; Target Use Case |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Adobe PDF Services API](https://developer.adobe.com/document-services/apis/pdf-services/)** | ~$215B Market Cap (NASDAQ: ADBE) / ~$21.4B Annual Revenue | **$0.05 / transaction** (volume enterprise packages via Adobe Sales; starter agreements from ~$1,000/yr) | **500 Document Transactions / month** forever free; no credit card required; low-volume production permitted | Cloud-native Word/HTML-to-PDF, OCR extraction, PDF/A compliance, and digital signing by the creator of the PDF format. Enterprise-grade reliability. |
+| **[Apryse (formerly PDFTron)](https://apryse.com/)** | ~$1.5B Valuation (Thoma Bravo / Silversmith) / ~$100M+ ARR | **$1,500 / year** (Server SDK base license tier; modular pricing tailored to deployment) | **40 active days evaluation trial** with full feature access across all SDK modules (output watermarked after evaluation period) | Enterprise cross-platform SDK for web, desktop, and mobile. Supports high-performance viewing, annotation, form fields, redaction, digital signatures, and CAD/BIM rendering. |
+| **[Aspose.PDF](https://products.aspose.com/pdf/)** | ~$35M ARR (Aspose Pty Ltd / GroupDocs) | **$1,679 one-time** (Developer Small Business license: 1 developer, 1 deployment site, 1-year updates) | **Indefinite free evaluation** (capped at processing 4 items per collection, e.g., max 4 pages/fields, with watermark) or **30-day unrestricted temporary license** on business email request | Extensive standalone native APIs for .NET, Java, Python, C++, and Android. Total programmatic control over PDF generation, conversion, encryption, and PDF/A validation without third-party dependencies. |
+| **[IronPDF](https://ironsoftware.com/csharp/pdf/)** | ~$20M ARR (Iron Software) | **$999 one-time** (Lite Perpetual License: 1 developer, 1 location, 1 project with 1-year support) | **30-day fully functional free trial key** (unlimited document generation with zero watermarks during trial; no credit card required) | Developer-friendly HTML-to-PDF rendering engine for .NET, Java, Python, and Node.js with pixel-accurate CSS3, JavaScript execution, and integrated PDF editing. |
+| **[Prince XML](https://www.princexml.com/)** | ~$7M ARR (YesLogic Pty Ltd) | **$495 one-time** (Desktop single-user license) / **$3,800 one-time** (Server single-CPU license with 1-year upgrades) | **Free non-commercial desktop license forever** (full CSS Paged Media functionality; small Prince logo watermark on page 1) | The gold standard HTML/CSS-to-PDF publishing engine. Unequaled CSS Paged Media implementation, complex multi-column layouts, footnotes, and CMYK printing profiles. |
+| **[DocRaptor](https://docraptor.com/)** | ~$4M ARR (Expected Behavior, LLC) | **$15 / month** (Basic Plan: 125 documents/month included; $0.12 per additional document) | **5 production documents / month forever free** + **unlimited watermarked test documents** on all plans | Managed cloud API wrapper powered directly by the Prince XML engine. Delivers print-CSS fidelity without managing server hardware or expensive server licenses. |
+| **[PDFShift](https://pdfshift.io/)** | ~$1.5M ARR (PDFShift) | **$9.00 / month** (Starter Plan: 250 document credits/month; $0.04 per overage conversion) | **50 free credits / month forever** (credits reset monthly; no credit card required; 1 credit per 5MB output) | Low-latency REST API using headless Chromium for converting modern web pages (CSS Grid, Flexbox, Web Fonts) to PDF with built-in webhook callbacks and S3 storage delivery. |
+| **[PDFMonkey](https://www.pdfmonkey.io/)** | ~$1.0M ARR (PDFMonkey) | **€5.00 / month** (~$5.50/mo for Starter: 100 documents/mo; Pro Plan starts at €15/month for 500 documents) | **20 documents / month forever free** (1-day retention) + automatic **30-day Pro Trial** with 300 free documents on signup | Visual template builder combining HTML/CSS and Liquid dynamic templating. Built-in integrations for Zapier, Make, and webhook triggers. |
+
+---
+
+## 🚀 Open-Source GitHub Projects
+
+Open-source libraries offer complete infrastructure independence, zero per-document licensing costs, and complete privacy control.
+
+### 📊 Quick Comparison Matrix
+
+The table below summarizes the top open-source projects, **sorted descending by GitHub star count**.
+
+| Rank | Project Name | GitHub Stars Badge | Language / Ecosystem | License | Primary Architecture |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Puppeteer** | [![GitHub stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers) | Node.js / Chromium | Apache-2.0 | Headless Chrome Print Pipeline |
+| 2 | **Stirling-PDF** | [![GitHub stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers) | Java / Spring Boot | GPL-3.0 / MIT | Self-Hosted Web PDF Swiss Army Knife |
+| 3 | **Typst** | [![GitHub stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers) | Rust | Apache-2.0 | Next-Gen Markup &amp; Typesetting Engine |
+| 4 | **jsPDF** | [![GitHub stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers) | JavaScript (Browser/Node) | MIT | Client-Side Vector &amp; HTML Canvas |
+| 5 | **React-PDF** | [![GitHub stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers) | React / TypeScript | MIT | Declarative React Component Renderer |
+| 6 | **wkhtmltopdf** | [![GitHub stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers) | C++ / QtWebKit | LGPL-3.0 | CLI HTML-to-PDF WebKit Renderer |
+| 7 | **Gotenberg** | [![GitHub stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers) | Go / Docker | MIT | Stateless Microservice (Chromium/LibreOffice) |
+| 8 | **pdfmake** | [![GitHub stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers) | JavaScript | MIT | Declarative JSON Document Layout |
+| 9 | **dompdf** | [![GitHub stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers) | PHP | LGPL-2.1 | Pure PHP CSS 2.1 Layout Engine |
+| 10 | **PyMuPDF** | [![GitHub stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers) | Python / C (MuPDF) | AGPL-3.0 | Ultra-Fast Parsing, Extraction &amp; Editing |
+| 11 | **PDFKit** | [![GitHub stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers) | JavaScript / Node.js | MIT | Stream-Based Coordinate Drawing Engine |
+| 12 | **pypdf** | [![GitHub stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers) | Python | BSD-3-Clause | Pure Python Page &amp; Document Manipulation |
+| 13 | **WeasyPrint** | [![GitHub stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers) | Python | BSD-3-Clause | Dedicated Print CSS &amp; Paged Media Engine |
+| 14 | **pdfcpu** | [![GitHub stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers) | Go | Apache-2.0 | Pure Go PDF Processor &amp; CLI |
+| 15 | **pdf-lib** | [![GitHub stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers) | TypeScript / JS | MIT | Zero-Dependency Creation &amp; Modification |
+| 16 | **mPDF** | [![GitHub stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers) | PHP | GPL-2.0 | Comprehensive UTF-8 &amp; CSS3 PHP Engine |
+| 17 | **TCPDF** | [![GitHub stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers) | PHP | LGPL-3.0 | Legacy Single-Class PHP PDF Suite |
+| 18 | **fpdf2** | [![GitHub stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers) | Python | LGPL-3.0 | Lightweight Python Primitive Drawing |
+
+---
+
+### 🔍 Detailed Project Breakdowns (Ranked by Stars)
+
+#### 1. [Puppeteer](https://github.com/puppeteer/puppeteer) [![GitHub stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers)
+- **Ecosystem:** Node.js / Chromium (Apache-2.0)
+- **Key Characteristics:** Headless Chrome PDF rendering via `page.pdf()`. Faithfully renders modern web technologies (Flexbox, CSS Grid, SVG, Canvas, WebGL, custom web fonts) via Chromium's native print pipeline.
+- **Performance Profile:** Browser process startup incurs ~800ms overhead; however, reusing a persistent pool of browser instances drops per-page generation latency to **~25ms**.
+- **Best For:** Complex dashboards, data visualizations, and applications where the PDF must mirror an existing web frontend pixel-for-pixel.
+
+#### 2. [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) [![GitHub stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers)
+- **Ecosystem:** Java / Spring Boot / Docker (GPL-3.0 / MIT)
+- **Key Characteristics:** Powerful, locally hosted web application and REST API for PDF manipulation. Provides end-to-end functionality including merging, splitting, rotating, cropping, compressing, OCR text extraction, watermarking, password removal, and PDF/A conversion.
+- **Privacy &amp; Security:** 100% private and on-premise; zero telemetry or outbound document transmission.
+- **Best For:** Teams and enterprises seeking a self-hosted replacement for commercial online tools like Smallpdf or iLovePDF.
+
+#### 3. [Typst](https://github.com/typst/typst) [![GitHub stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers)
+- **Ecosystem:** Rust (Apache-2.0)
+- **Key Characteristics:** A revolutionary markup-based typesetting system designed as a modern, high-speed alternative to LaTeX. Features an intuitive syntax, built-in layout functions, instant incremental compilation, and expressive scripting.
+- **Performance Profile:** Sub-millisecond incremental rendering speed; generates publication-grade PDFs with advanced math formulas and typographic control.
+- **Best For:** Technical documentation, academic papers, scientific reports, and programmatic document generation from markdown-like syntax.
+
+#### 4. [jsPDF](https://github.com/parallax/jsPDF) [![GitHub stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers)
+- **Ecosystem:** JavaScript / Browser &amp; Node.js (MIT)
+- **Key Characteristics:** The industry standard client-side PDF generation library. Creates PDFs entirely in the client browser without round-trips to backend servers.
+- **Implementation Nuances:** Supports coordinate-based vector primitives and an `html()` method (backed by html2canvas and DOMPurify). Full UTF-8 support requires embedding custom TTF font files via its fontconverter utility.
+- **Best For:** Client-side "Download Receipt", ticket generation, and single-page web export buttons.
+
+#### 5. [React-PDF](https://github.com/diegomura/react-pdf) [![GitHub stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers)
+- **Ecosystem:** React / TypeScript (MIT)
+- **Key Characteristics:** Custom React reconciler for rendering PDF documents using standard React JSX syntax (`<Document>`, `<Page>`, `<View>`, `<Text>`). Runs seamlessly on both the client browser and Node.js server.
+- **Styling Model:** Uses a Flexbox-based layout engine powered by Yoga, allowing frontend engineers to style documents with familiar CSS properties.
+- **Best For:** React and Next.js applications needing reusable, component-driven PDF templates and dynamic live-preview generation.
+
+#### 6. [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf) [![GitHub stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers)
+- **Ecosystem:** C++ / QtWebKit (LGPL-3.0)
+- **Key Characteristics:** Classic command-line utility to convert HTML into PDF using the WebKit rendering engine. Historically the most popular server-side converter.
+- **Current Status:** Archived/maintenance mode due to outdated WebKit engine limitations, but still extensively deployed in legacy production environments.
+- **Best For:** Existing server architectures maintaining established wkhtmltopdf wrapper scripts.
+
+#### 7. [Gotenberg](https://github.com/gotenberg/gotenberg) [![GitHub stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers)
+- **Ecosystem:** Go / Docker (MIT)
+- **Key Characteristics:** A stateless Docker-powered REST API microservice orchestrating Chromium, LibreOffice, and PDFtk. Seamlessly converts HTML, Markdown, Word, Excel, and PowerPoint documents into pristine PDFs.
+- **Architecture:** Features built-in health checks, process isolation, clustering support, and asynchronous webhook delivery.
+- **Best For:** Microservice and polyglot architectures requiring centralized, scalable document conversion endpoints.
+
+#### 8. [pdfmake](https://github.com/bpampuch/pdfmake) [![GitHub stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers)
+- **Ecosystem:** JavaScript / Browser &amp; Node.js (MIT)
+- **Key Characteristics:** Declarative JSON-based document definition engine. You construct documents as structured JSON objects rather than imperative coordinate drawing calls.
+- **Capabilities:** Built-in auto-pagination, dynamic multi-page tables, column layouts, text styling, and embedded virtual file system (VFS) fonts.
+- **Best For:** Data-dense corporate reports, invoice tables, and structured business documents requiring consistent typography across client and server.
+
+#### 9. [dompdf](https://github.com/dompdf/dompdf) [![GitHub stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers)
+- **Ecosystem:** PHP (LGPL-2.1)
+- **Key Characteristics:** Pure PHP HTML-to-PDF converter. Reads HTML and CSS 2.1 stylesheets and produces standard PDF documents without external binaries or browser dependencies.
+- **Best For:** Shared PHP hosting environments, WordPress plugins, and standard Laravel/Symfony invoice generation pipelines.
+
+#### 10. [PyMuPDF](https://github.com/pymupdf/PyMuPDF) [![GitHub stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers)
+- **Ecosystem:** Python / C (AGPL-3.0)
+- **Key Characteristics:** High-performance Python bindings for MuPDF. Known for blazingly fast PDF parsing, high-resolution rasterization, text extraction, redaction, and OCR integration via Tesseract.
+- **Best For:** AI/LLM document preprocessing, page extraction, high-speed document search, and programmatic page transformation.
+
+#### 11. [PDFKit](https://github.com/foliojs/pdfkit) [![GitHub stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers)
+- **Ecosystem:** JavaScript / Node.js (MIT)
+- **Key Characteristics:** High-speed server-side coordinate drawing library with zero browser or native C++ dependencies. Generates simple invoices in **~8ms per document**.
+- **Architecture:** Implements Node.js Readable streams, allowing generated pages to be piped directly into HTTP response streams or cloud storage buckets without buffering in memory.
+- **Best For:** Massive-volume, latency-critical billing and invoice generation systems.
+
+#### 12. [pypdf](https://github.com/py-pdf/pypdf) [![GitHub stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers)
+- **Ecosystem:** Python (BSD-3-Clause)
+- **Key Characteristics:** Pure Python library for splitting, merging, cropping, rotating, encrypting, and decrypting existing PDF documents.
+- **Best For:** Python automated workflows, batch document assembly, and metadata extraction without heavy binary dependencies.
+
+#### 13. [WeasyPrint](https://github.com/Kozea/WeasyPrint) [![GitHub stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers)
+- **Ecosystem:** Python (BSD-3-Clause)
+- **Key Characteristics:** Visual rendering engine written in Python for converting HTML and CSS into print-ready PDF pages. Specifically engineered for CSS Paged Media standards (headers, footers, page counters, bleed, and crop marks).
+- **Best For:** Python backends generating styled multi-page books, invoices, and statistical reports without a headless browser dependency.
+
+#### 14. [pdfcpu](https://github.com/pdfcpu/pdfcpu) [![GitHub stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers)
+- **Ecosystem:** Go (Apache-2.0)
+- **Key Characteristics:** Ultra-fast, pure Go PDF processing engine and CLI. Handles merging, splitting, watermarking, stamping, trimming, form extraction, and document validation.
+- **Best For:** Cloud-native Go microservices and command-line automation pipelines requiring zero external dependencies.
+
+#### 15. [pdf-lib](https://github.com/Hopding/pdf-lib) [![GitHub stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers)
+- **Ecosystem:** TypeScript / JavaScript (MIT)
+- **Key Characteristics:** Pure TypeScript library for creating and modifying PDF documents in any JavaScript runtime (Node.js, Deno, Bun, React Native, and web browsers).
+- **Capabilities:** Excellent for form filling, page merging/splitting, embedding vector paths, and stamping watermarks.
+- **Best For:** Universal JavaScript environments requiring document manipulation without native binaries.
+
+#### 16. [mPDF](https://github.com/mpdf/mpdf) [![GitHub stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers)
+- **Ecosystem:** PHP (GPL-2.0)
+- **Key Characteristics:** PHP library based on FPDF and HTML2FPDF with expansive CSS3 support, full UTF-8 Unicode compatibility, bidirectional text shaping (Arabic/Hebrew), and barcode generation.
+- **Best For:** Internationalized PHP web applications requiring right-to-left (RTL) scripts and complex tables.
+
+#### 17. [TCPDF](https://github.com/tecnickcom/TCPDF) [![GitHub stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers)
+- **Ecosystem:** PHP (LGPL-3.0)
+- **Key Characteristics:** Classic single-class PHP PDF generator with broad 1D/2D barcode support, digital signatures, and PDF/A compliance. (Note: maintained primarily for legacy systems; tc-lib-pdf is the modern successor).
+- **Best For:** Legacy PHP systems maintaining established reporting modules.
+
+#### 18. [fpdf2](https://github.com/py-pdf/fpdf2) [![GitHub stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers)
+- **Ecosystem:** Python (LGPL-3.0)
+- **Key Characteristics:** Modern, lightweight successor to PyFPDF. Features automatic Unicode (UTF-8) font subset embedding, table formatting, Markdown-like syntax, and chart embedding from Matplotlib and Pandas.
+- **Best For:** Lightweight Python scripts, CS education (used at Harvard CS50), and quick automated data exports.
+
+---
+
+## 🎯 Architectural Selection Guide
+
+Choosing the optimal PDF generation or manipulation stack depends on three primary factors: **fidelity requirements**, **throughput constraints**, and **infrastructure tolerance**.
+
+```mermaid
+flowchart TD
+    Start["What is your core PDF requirement?"] --> Need{"Primary Need"}
+    
+    Need -->|"Render Web Design / HTML"| HTMLBranch{"Design Complexity"}
+    Need -->|"High-Volume Data Invoices"| DrawingBranch{"Language Ecosystem"}
+    Need -->|"Manipulate Existing PDFs"| ManipBranch{"Operation Type"}
+    Need -->|"Typesetting / Documentation"| DocBranch["Typst"]
+
+    HTMLBranch -->|"Pixel-perfect Web CSS / JS"| Puppeteer["Puppeteer / Gotenberg / Headless Chromium"]
+    HTMLBranch -->|"Print CSS / Books / Paged Media"| Prince["Prince XML / DocRaptor / WeasyPrint"]
+    HTMLBranch -->|"Simple PHP Templates"| DomPDF["dompdf / mPDF"]
+
+    DrawingBranch -->|"Node.js / Streaming"| PDFKit["PDFKit (~8ms, streaming)"]
+    DrawingBranch -->|"React / Component-driven"| ReactPDF["React-PDF"]
+    DrawingBranch -->|"Python / Lightweight"| FPDF["fpdf2"]
+    DrawingBranch -->|"Declarative JSON"| PDFMake["pdfmake"]
+
+    ManipBranch -->|"Merge / Split / Watermark"| MergeBranch["pdf-lib (JS) / pypdf (Python) / pdfcpu (Go)"]
+    ManipBranch -->|"OCR / High-Speed Extraction"| PyMuPDF["PyMuPDF"]
+    ManipBranch -->|"Self-Hosted All-in-One Suite"| Stirling["Stirling-PDF"]
+```
+
+### ⚡ Performance &amp; Infrastructure Matrix
+
+- **Coordinate-Based Drawing (PDFKit, fpdf2):**
+  - *Speed:* ⚡ ~8ms per document.
+  - *Memory:* Minimal (~20–40 MB).
+  - *Trade-off:* Prohibitive layout design cost; must calculate coordinates and line breaks manually.
+- **Headless Chromium (Puppeteer, Gotenberg):**
+  - *Speed:* ⏱️ ~800ms initial startup; ~25ms per page with persistent warm browser pools.
+  - *Memory:* Heavy (~300–600 MB per browser instance).
+  - *Trade-off:* High design fidelity with modern CSS Grid/Flexbox, but requires robust worker queue architecture.
+- **Dedicated Print Renderers (Prince XML, WeasyPrint):**
+  - *Speed:* ⏱️ ~150–400ms per document.
+  - *Memory:* Moderate (~80–180 MB).
+  - *Trade-off:* Unmatched CSS Paged Media support for books and multi-page formal reports; lacks full interactive browser JS runtime.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions from the developer community are warmly welcomed! To suggest a new open-source library, SaaS platform, or performance benchmark:
+
+1. 🍴 **Fork the repository** on GitHub.
+2. 🌿 **Create a descriptive feature branch** (`git checkout -b add-my-tool`).
+3. 📝 **Edit `README.md`**: Follow existing table and list formatting. Include verified pricing, free tier limits, star badges, and factual architectural characteristics.
+4. 🔍 **Verify links and badges**: Ensure all markdown links, stargazers badges, and anchors resolve properly.
+5. 🚀 **Submit a Pull Request** with a concise description of your additions.
+
+---
+
+##  Star History
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-PDF-Generation-Manipulation&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-PDF-Generation-Manipulation&type=date&legend=top-left)
+
+---
+
+## 💖 Support
+
+If you find this curated resource helpful for your projects, architecture decisions, or engineering workflows, please consider supporting the project:
+
+- ⭐ **Star this repository** to help other engineers discover it.
+- 🍴 **Fork and contribute** your tools, fixes, and insights.
+- 📣 **Share with your network** on Twitter/X, LinkedIn, Reddit, and Discord.
+- ☕ **Sponsor the Maintainer:** If you'd like to fuel ongoing curation, benchmarking, and updates, you can buy me a coffee via the **[GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007)**.
+
+Thank you to all contributors and stargazers across the open-source community! 🙌
+
+---
+
+## ⚖️ Disclaimer &amp; License
+
+- This repository is an independent, community-curated technical index and does not represent a commercial endorsement of any product or service.
+- Product names, logos, and brands are property of their respective owners. Performance metrics and pricing tiers are subject to change by vendors; always consult official documentation for production deployments.
+- Distributed under the [MIT License](LICENSE). Built with ❤️ for backend developers, frontend engineers, and document automation teams worldwide.
