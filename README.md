@@ -69,129 +69,129 @@ Open-source libraries offer complete infrastructure independence, zero per-docum
 
 ### 📊 Quick Comparison Matrix
 
-The table below summarizes the top open-source projects, **sorted descending by GitHub star count**.
+The table below summarizes the top open-source projects, **sorted descending by GitHub Stars_Count**.
 
-| Rank | Project Name | GitHub Stars Badge | Language / Ecosystem | License | Primary Architecture |
+| Rank | Project Name | GitHub_Stars_Badge | Language / Ecosystem | License | Primary Architecture |
 | :---: | :--- | :--- | :--- | :--- | :--- |
-| 1 | **Puppeteer** | [![GitHub stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers) | Node.js / Chromium | Apache-2.0 | Headless Chrome Print Pipeline |
-| 2 | **Stirling-PDF** | [![GitHub stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers) | Java / Spring Boot | GPL-3.0 / MIT | Self-Hosted Web PDF Swiss Army Knife |
-| 3 | **Typst** | [![GitHub stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers) | Rust | Apache-2.0 | Next-Gen Markup &amp; Typesetting Engine |
-| 4 | **jsPDF** | [![GitHub stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers) | JavaScript (Browser/Node) | MIT | Client-Side Vector &amp; HTML Canvas |
-| 5 | **React-PDF** | [![GitHub stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers) | React / TypeScript | MIT | Declarative React Component Renderer |
-| 6 | **wkhtmltopdf** | [![GitHub stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers) | C++ / QtWebKit | LGPL-3.0 | CLI HTML-to-PDF WebKit Renderer |
-| 7 | **Gotenberg** | [![GitHub stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers) | Go / Docker | MIT | Stateless Microservice (Chromium/LibreOffice) |
-| 8 | **pdfmake** | [![GitHub stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers) | JavaScript | MIT | Declarative JSON Document Layout |
-| 9 | **dompdf** | [![GitHub stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers) | PHP | LGPL-2.1 | Pure PHP CSS 2.1 Layout Engine |
-| 10 | **PyMuPDF** | [![GitHub stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers) | Python / C (MuPDF) | AGPL-3.0 | Ultra-Fast Parsing, Extraction &amp; Editing |
-| 11 | **PDFKit** | [![GitHub stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers) | JavaScript / Node.js | MIT | Stream-Based Coordinate Drawing Engine |
-| 12 | **pypdf** | [![GitHub stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers) | Python | BSD-3-Clause | Pure Python Page &amp; Document Manipulation |
-| 13 | **WeasyPrint** | [![GitHub stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers) | Python | BSD-3-Clause | Dedicated Print CSS &amp; Paged Media Engine |
-| 14 | **pdfcpu** | [![GitHub stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers) | Go | Apache-2.0 | Pure Go PDF Processor &amp; CLI |
-| 15 | **pdf-lib** | [![GitHub stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers) | TypeScript / JS | MIT | Zero-Dependency Creation &amp; Modification |
-| 16 | **mPDF** | [![GitHub stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers) | PHP | GPL-2.0 | Comprehensive UTF-8 &amp; CSS3 PHP Engine |
-| 17 | **TCPDF** | [![GitHub stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers) | PHP | LGPL-3.0 | Legacy Single-Class PHP PDF Suite |
-| 18 | **fpdf2** | [![GitHub stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers) | Python | LGPL-3.0 | Lightweight Python Primitive Drawing |
+| 1 | **Puppeteer** | [![GitHub_Stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers) | Node.js / Chromium | Apache-2.0 | Headless Chrome Print Pipeline |
+| 2 | **Stirling-PDF** | [![GitHub_Stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers) | Java / Spring Boot | GPL-3.0 / MIT | Self-Hosted Web PDF Swiss Army Knife |
+| 3 | **Typst** | [![GitHub_Stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers) | Rust | Apache-2.0 | Next-Gen Markup &amp; Typesetting Engine |
+| 4 | **jsPDF** | [![GitHub_Stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers) | JavaScript (Browser/Node) | MIT | Client-Side Vector &amp; HTML Canvas |
+| 5 | **React-PDF** | [![GitHub_Stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers) | React / TypeScript | MIT | Declarative React Component Renderer |
+| 6 | **wkhtmltopdf** | [![GitHub_Stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers) | C++ / QtWebKit | LGPL-3.0 | CLI HTML-to-PDF WebKit Renderer |
+| 7 | **Gotenberg** | [![GitHub_Stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers) | Go / Docker | MIT | Stateless Microservice (Chromium/LibreOffice) |
+| 8 | **pdfmake** | [![GitHub_Stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers) | JavaScript | MIT | Declarative JSON Document Layout |
+| 9 | **dompdf** | [![GitHub_Stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers) | PHP | LGPL-2.1 | Pure PHP CSS 2.1 Layout Engine |
+| 10 | **PyMuPDF** | [![GitHub_Stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers) | Python / C (MuPDF) | AGPL-3.0 | Ultra-Fast Parsing, Extraction &amp; Editing |
+| 11 | **PDFKit** | [![GitHub_Stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers) | JavaScript / Node.js | MIT | Stream-Based Coordinate Drawing Engine |
+| 12 | **pypdf** | [![GitHub_Stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers) | Python | BSD-3-Clause | Pure Python Page &amp; Document Manipulation |
+| 13 | **WeasyPrint** | [![GitHub_Stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers) | Python | BSD-3-Clause | Dedicated Print CSS &amp; Paged Media Engine |
+| 14 | **pdfcpu** | [![GitHub_Stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers) | Go | Apache-2.0 | Pure Go PDF Processor &amp; CLI |
+| 15 | **pdf-lib** | [![GitHub_Stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers) | TypeScript / JS | MIT | Zero-Dependency Creation &amp; Modification |
+| 16 | **mPDF** | [![GitHub_Stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers) | PHP | GPL-2.0 | Comprehensive UTF-8 &amp; CSS3 PHP Engine |
+| 17 | **TCPDF** | [![GitHub_Stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers) | PHP | LGPL-3.0 | Legacy Single-Class PHP PDF Suite |
+| 18 | **fpdf2** | [![GitHub_Stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers) | Python | LGPL-3.0 | Lightweight Python Primitive Drawing |
 
 ---
 
 ### 🔍 Detailed Project Breakdowns (Ranked by Stars)
 
-#### 1. [Puppeteer](https://github.com/puppeteer/puppeteer) [![GitHub stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers)
+#### 1. [Puppeteer](https://github.com/puppeteer/puppeteer) [![GitHub_Stars](https://img.shields.io/github/stars/puppeteer/puppeteer?style=social&color=white)](https://github.com/puppeteer/puppeteer/stargazers)
 - **Ecosystem:** Node.js / Chromium (Apache-2.0)
 - **Key Characteristics:** Headless Chrome PDF rendering via `page.pdf()`. Faithfully renders modern web technologies (Flexbox, CSS Grid, SVG, Canvas, WebGL, custom web fonts) via Chromium's native print pipeline.
 - **Performance Profile:** Browser process startup incurs ~800ms overhead; however, reusing a persistent pool of browser instances drops per-page generation latency to **~25ms**.
 - **Best For:** Complex dashboards, data visualizations, and applications where the PDF must mirror an existing web frontend pixel-for-pixel.
 
-#### 2. [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) [![GitHub stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers)
+#### 2. [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) [![GitHub_Stars](https://img.shields.io/github/stars/Stirling-Tools/Stirling-PDF?style=social&color=white)](https://github.com/Stirling-Tools/Stirling-PDF/stargazers)
 - **Ecosystem:** Java / Spring Boot / Docker (GPL-3.0 / MIT)
 - **Key Characteristics:** Powerful, locally hosted web application and REST API for PDF manipulation. Provides end-to-end functionality including merging, splitting, rotating, cropping, compressing, OCR text extraction, watermarking, password removal, and PDF/A conversion.
 - **Privacy &amp; Security:** 100% private and on-premise; zero telemetry or outbound document transmission.
 - **Best For:** Teams and enterprises seeking a self-hosted replacement for commercial online tools like Smallpdf or iLovePDF.
 
-#### 3. [Typst](https://github.com/typst/typst) [![GitHub stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers)
+#### 3. [Typst](https://github.com/typst/typst) [![GitHub_Stars](https://img.shields.io/github/stars/typst/typst?style=social&color=white)](https://github.com/typst/typst/stargazers)
 - **Ecosystem:** Rust (Apache-2.0)
 - **Key Characteristics:** A revolutionary markup-based typesetting system designed as a modern, high-speed alternative to LaTeX. Features an intuitive syntax, built-in layout functions, instant incremental compilation, and expressive scripting.
 - **Performance Profile:** Sub-millisecond incremental rendering speed; generates publication-grade PDFs with advanced math formulas and typographic control.
 - **Best For:** Technical documentation, academic papers, scientific reports, and programmatic document generation from markdown-like syntax.
 
-#### 4. [jsPDF](https://github.com/parallax/jsPDF) [![GitHub stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers)
+#### 4. [jsPDF](https://github.com/parallax/jsPDF) [![GitHub_Stars](https://img.shields.io/github/stars/parallax/jsPDF?style=social&color=white)](https://github.com/parallax/jsPDF/stargazers)
 - **Ecosystem:** JavaScript / Browser &amp; Node.js (MIT)
 - **Key Characteristics:** The industry standard client-side PDF generation library. Creates PDFs entirely in the client browser without round-trips to backend servers.
 - **Implementation Nuances:** Supports coordinate-based vector primitives and an `html()` method (backed by html2canvas and DOMPurify). Full UTF-8 support requires embedding custom TTF font files via its fontconverter utility.
 - **Best For:** Client-side "Download Receipt", ticket generation, and single-page web export buttons.
 
-#### 5. [React-PDF](https://github.com/diegomura/react-pdf) [![GitHub stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers)
+#### 5. [React-PDF](https://github.com/diegomura/react-pdf) [![GitHub_Stars](https://img.shields.io/github/stars/diegomura/react-pdf?style=social&color=white)](https://github.com/diegomura/react-pdf/stargazers)
 - **Ecosystem:** React / TypeScript (MIT)
 - **Key Characteristics:** Custom React reconciler for rendering PDF documents using standard React JSX syntax (`<Document>`, `<Page>`, `<View>`, `<Text>`). Runs seamlessly on both the client browser and Node.js server.
 - **Styling Model:** Uses a Flexbox-based layout engine powered by Yoga, allowing frontend engineers to style documents with familiar CSS properties.
 - **Best For:** React and Next.js applications needing reusable, component-driven PDF templates and dynamic live-preview generation.
 
-#### 6. [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf) [![GitHub stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers)
+#### 6. [wkhtmltopdf](https://github.com/wkhtmltopdf/wkhtmltopdf) [![GitHub_Stars](https://img.shields.io/github/stars/wkhtmltopdf/wkhtmltopdf?style=social&color=white)](https://github.com/wkhtmltopdf/wkhtmltopdf/stargazers)
 - **Ecosystem:** C++ / QtWebKit (LGPL-3.0)
 - **Key Characteristics:** Classic command-line utility to convert HTML into PDF using the WebKit rendering engine. Historically the most popular server-side converter.
 - **Current Status:** Archived/maintenance mode due to outdated WebKit engine limitations, but still extensively deployed in legacy production environments.
 - **Best For:** Existing server architectures maintaining established wkhtmltopdf wrapper scripts.
 
-#### 7. [Gotenberg](https://github.com/gotenberg/gotenberg) [![GitHub stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers)
+#### 7. [Gotenberg](https://github.com/gotenberg/gotenberg) [![GitHub_Stars](https://img.shields.io/github/stars/gotenberg/gotenberg?style=social&color=white)](https://github.com/gotenberg/gotenberg/stargazers)
 - **Ecosystem:** Go / Docker (MIT)
 - **Key Characteristics:** A stateless Docker-powered REST API microservice orchestrating Chromium, LibreOffice, and PDFtk. Seamlessly converts HTML, Markdown, Word, Excel, and PowerPoint documents into pristine PDFs.
 - **Architecture:** Features built-in health checks, process isolation, clustering support, and asynchronous webhook delivery.
 - **Best For:** Microservice and polyglot architectures requiring centralized, scalable document conversion endpoints.
 
-#### 8. [pdfmake](https://github.com/bpampuch/pdfmake) [![GitHub stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers)
+#### 8. [pdfmake](https://github.com/bpampuch/pdfmake) [![GitHub_Stars](https://img.shields.io/github/stars/bpampuch/pdfmake?style=social&color=white)](https://github.com/bpampuch/pdfmake/stargazers)
 - **Ecosystem:** JavaScript / Browser &amp; Node.js (MIT)
 - **Key Characteristics:** Declarative JSON-based document definition engine. You construct documents as structured JSON objects rather than imperative coordinate drawing calls.
 - **Capabilities:** Built-in auto-pagination, dynamic multi-page tables, column layouts, text styling, and embedded virtual file system (VFS) fonts.
 - **Best For:** Data-dense corporate reports, invoice tables, and structured business documents requiring consistent typography across client and server.
 
-#### 9. [dompdf](https://github.com/dompdf/dompdf) [![GitHub stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers)
+#### 9. [dompdf](https://github.com/dompdf/dompdf) [![GitHub_Stars](https://img.shields.io/github/stars/dompdf/dompdf?style=social&color=white)](https://github.com/dompdf/dompdf/stargazers)
 - **Ecosystem:** PHP (LGPL-2.1)
 - **Key Characteristics:** Pure PHP HTML-to-PDF converter. Reads HTML and CSS 2.1 stylesheets and produces standard PDF documents without external binaries or browser dependencies.
 - **Best For:** Shared PHP hosting environments, WordPress plugins, and standard Laravel/Symfony invoice generation pipelines.
 
-#### 10. [PyMuPDF](https://github.com/pymupdf/PyMuPDF) [![GitHub stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers)
+#### 10. [PyMuPDF](https://github.com/pymupdf/PyMuPDF) [![GitHub_Stars](https://img.shields.io/github/stars/pymupdf/PyMuPDF?style=social&color=white)](https://github.com/pymupdf/PyMuPDF/stargazers)
 - **Ecosystem:** Python / C (AGPL-3.0)
 - **Key Characteristics:** High-performance Python bindings for MuPDF. Known for blazingly fast PDF parsing, high-resolution rasterization, text extraction, redaction, and OCR integration via Tesseract.
 - **Best For:** AI/LLM document preprocessing, page extraction, high-speed document search, and programmatic page transformation.
 
-#### 11. [PDFKit](https://github.com/foliojs/pdfkit) [![GitHub stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers)
+#### 11. [PDFKit](https://github.com/foliojs/pdfkit) [![GitHub_Stars](https://img.shields.io/github/stars/foliojs/pdfkit?style=social&color=white)](https://github.com/foliojs/pdfkit/stargazers)
 - **Ecosystem:** JavaScript / Node.js (MIT)
 - **Key Characteristics:** High-speed server-side coordinate drawing library with zero browser or native C++ dependencies. Generates simple invoices in **~8ms per document**.
 - **Architecture:** Implements Node.js Readable streams, allowing generated pages to be piped directly into HTTP response streams or cloud storage buckets without buffering in memory.
 - **Best For:** Massive-volume, latency-critical billing and invoice generation systems.
 
-#### 12. [pypdf](https://github.com/py-pdf/pypdf) [![GitHub stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers)
+#### 12. [pypdf](https://github.com/py-pdf/pypdf) [![GitHub_Stars](https://img.shields.io/github/stars/py-pdf/pypdf?style=social&color=white)](https://github.com/py-pdf/pypdf/stargazers)
 - **Ecosystem:** Python (BSD-3-Clause)
 - **Key Characteristics:** Pure Python library for splitting, merging, cropping, rotating, encrypting, and decrypting existing PDF documents.
 - **Best For:** Python automated workflows, batch document assembly, and metadata extraction without heavy binary dependencies.
 
-#### 13. [WeasyPrint](https://github.com/Kozea/WeasyPrint) [![GitHub stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers)
+#### 13. [WeasyPrint](https://github.com/Kozea/WeasyPrint) [![GitHub_Stars](https://img.shields.io/github/stars/Kozea/WeasyPrint?style=social&color=white)](https://github.com/Kozea/WeasyPrint/stargazers)
 - **Ecosystem:** Python (BSD-3-Clause)
 - **Key Characteristics:** Visual rendering engine written in Python for converting HTML and CSS into print-ready PDF pages. Specifically engineered for CSS Paged Media standards (headers, footers, page counters, bleed, and crop marks).
 - **Best For:** Python backends generating styled multi-page books, invoices, and statistical reports without a headless browser dependency.
 
-#### 14. [pdfcpu](https://github.com/pdfcpu/pdfcpu) [![GitHub stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers)
+#### 14. [pdfcpu](https://github.com/pdfcpu/pdfcpu) [![GitHub_Stars](https://img.shields.io/github/stars/pdfcpu/pdfcpu?style=social&color=white)](https://github.com/pdfcpu/pdfcpu/stargazers)
 - **Ecosystem:** Go (Apache-2.0)
 - **Key Characteristics:** Ultra-fast, pure Go PDF processing engine and CLI. Handles merging, splitting, watermarking, stamping, trimming, form extraction, and document validation.
 - **Best For:** Cloud-native Go microservices and command-line automation pipelines requiring zero external dependencies.
 
-#### 15. [pdf-lib](https://github.com/Hopding/pdf-lib) [![GitHub stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers)
+#### 15. [pdf-lib](https://github.com/Hopding/pdf-lib) [![GitHub_Stars](https://img.shields.io/github/stars/Hopding/pdf-lib?style=social&color=white)](https://github.com/Hopding/pdf-lib/stargazers)
 - **Ecosystem:** TypeScript / JavaScript (MIT)
 - **Key Characteristics:** Pure TypeScript library for creating and modifying PDF documents in any JavaScript runtime (Node.js, Deno, Bun, React Native, and web browsers).
 - **Capabilities:** Excellent for form filling, page merging/splitting, embedding vector paths, and stamping watermarks.
 - **Best For:** Universal JavaScript environments requiring document manipulation without native binaries.
 
-#### 16. [mPDF](https://github.com/mpdf/mpdf) [![GitHub stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers)
+#### 16. [mPDF](https://github.com/mpdf/mpdf) [![GitHub_Stars](https://img.shields.io/github/stars/mpdf/mpdf?style=social&color=white)](https://github.com/mpdf/mpdf/stargazers)
 - **Ecosystem:** PHP (GPL-2.0)
 - **Key Characteristics:** PHP library based on FPDF and HTML2FPDF with expansive CSS3 support, full UTF-8 Unicode compatibility, bidirectional text shaping (Arabic/Hebrew), and barcode generation.
 - **Best For:** Internationalized PHP web applications requiring right-to-left (RTL) scripts and complex tables.
 
-#### 17. [TCPDF](https://github.com/tecnickcom/TCPDF) [![GitHub stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers)
+#### 17. [TCPDF](https://github.com/tecnickcom/TCPDF) [![GitHub_Stars](https://img.shields.io/github/stars/tecnickcom/TCPDF?style=social&color=white)](https://github.com/tecnickcom/TCPDF/stargazers)
 - **Ecosystem:** PHP (LGPL-3.0)
 - **Key Characteristics:** Classic single-class PHP PDF generator with broad 1D/2D barcode support, digital signatures, and PDF/A compliance. (Note: maintained primarily for legacy systems; tc-lib-pdf is the modern successor).
 - **Best For:** Legacy PHP systems maintaining established reporting modules.
 
-#### 18. [fpdf2](https://github.com/py-pdf/fpdf2) [![GitHub stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers)
+#### 18. [fpdf2](https://github.com/py-pdf/fpdf2) [![GitHub_Stars](https://img.shields.io/github/stars/py-pdf/fpdf2?style=social&color=white)](https://github.com/py-pdf/fpdf2/stargazers)
 - **Ecosystem:** Python (LGPL-3.0)
 - **Key Characteristics:** Modern, lightweight successor to PyFPDF. Features automatic Unicode (UTF-8) font subset embedding, table formatting, Markdown-like syntax, and chart embedding from Matplotlib and Pandas.
 - **Best For:** Lightweight Python scripts, CS education (used at Harvard CS50), and quick automated data exports.
@@ -248,7 +248,7 @@ Contributions from the developer community are warmly welcomed! To suggest a new
 
 1. 🍴 **Fork the repository** on GitHub.
 2. 🌿 **Create a descriptive feature branch** (`git checkout -b add-my-tool`).
-3. 📝 **Edit `README.md`**: Follow existing table and list formatting. Include verified pricing, free tier limits, star badges, and factual architectural characteristics.
+3. 📝 **Edit `README.md`**: Follow existing table and list formatting. Include verified pricing, free tier limits, Stars_Badges, and factual architectural characteristics.
 4. 🔍 **Verify links and badges**: Ensure all markdown links, stargazers badges, and anchors resolve properly.
 5. 🚀 **Submit a Pull Request** with a concise description of your additions.
 
